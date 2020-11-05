@@ -2,10 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import Onboarding_Wrapper from './Wrapper'
-import {uploadDoc} from './Action'
+import BankStatementWrapper from './Wrapper'
 
-class Onboarding_Container extends React.PureComponent{
+class BankStatementContainer extends React.PureComponent{
   constructor(props){
     super(props)
     this.state={flag: false}
@@ -16,7 +15,7 @@ class Onboarding_Container extends React.PureComponent{
         return(
           <>
           {!flag?
-            <Onboarding_Wrapper
+            <BankStatementWrapper
             // pan={pan}
             uploadDoc = {()=>
               {console.log('dummy upload')
@@ -24,7 +23,7 @@ class Onboarding_Container extends React.PureComponent{
           }
         }
             />
-            :<Link to='/next-page'>Navigate to next page</Link>}
+            :<Link to='/next-next'>Navigate to next page</Link>}
            </> 
         )
     }
@@ -36,10 +35,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   actions: {
-    uploadDoc: data => {
-      return dispatch(uploadDoc(data))
-    }
   }
   })
   
-export default   connect(mapStateToProps, mapDispatchToProps)(Onboarding_Container)
+export default   connect(mapStateToProps, mapDispatchToProps)(BankStatementContainer)

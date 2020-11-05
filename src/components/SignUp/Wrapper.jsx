@@ -54,13 +54,13 @@ class SignUp_Wrapper extends React.PureComponent{
                             variant='h2'
                             style={{color: '#fff'}}
                         >
-                            Mitra
+                            Sathi
                         </Typography>
                         <Typography
                             variant='h6'
                             style={{color: '#fff'}}
                         >
-                            To be filled later
+                            for Indian merchants
                         </Typography>
                         </Box>
                     </Grid>

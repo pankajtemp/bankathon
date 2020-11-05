@@ -2,8 +2,9 @@ import React from 'react'
 import axios from 'axios';
 import {Box, Grid, Button, Typography, TextField} from '@material-ui/core'
 
+import money from './money.jpeg'
 
-class OnboardingFinal_Wrapper extends React.PureComponent {
+class BankStatementWrapper extends React.PureComponent {
   constructor(props){
     super(props);
     this.state = {
@@ -12,12 +13,8 @@ class OnboardingFinal_Wrapper extends React.PureComponent {
     }
   }
 
-  handleUpload=()=>{
-    console.log('dummy upload')
-  }
-
-  handleUpload2=()=>{
-    const {uploadDoc} = this.props
+  handleSubmit = () => {
+      const {uploadDoc}=this.props
     uploadDoc()
   }
   
@@ -29,16 +26,16 @@ class OnboardingFinal_Wrapper extends React.PureComponent {
              <Box
                 height='100vh'
                 bgcolor='#ffd5cd'
-                style={{background: 'linear-gradient(180deg, #ffd5cd 80%, pink 100%)'}}
+                style={{backgroundImage: `url(${money})`}}
             >
                 <Box
-                bgcolor='#fc3a6c'
+                bgcolor='#999'
                 p={3} 
                 py={6}
                 style={{borderBottomLeftRadius: '30px', borderBottomRightRadius: '30px'}}               
                 >
                 <Typography variant='h4' style={{color: '#fff'}}>
-                    Documents verification
+                    Bank Credits Check
                 </Typography>
             </Box>
             <Box pt={4}>
@@ -59,21 +56,7 @@ class OnboardingFinal_Wrapper extends React.PureComponent {
                         <input onChange={this.handleChange} ref={(ref) => { this.uploadInput = ref; }} type="file"/>
                         <br/>
                         <Box mt={3}>
-                        <Button variant='contained' style={{color: '#fff',backgroundColor: '#fc3a6c'}} onClick={this.handleUpload}>Upload PAN card</Button>
-                        </Box>
-                        </Box>
-                        </center>
-                    </Box>
-                     </Grid>
-                    <Grid item xs={12}>
-                     <Box px={3} pt={3} >
-                         <center>
-                         <br/>
-                         <Box bgcolor='#fff' p={2} borderRadius='10px'>
-                        <input onChange={this.handleChange} ref={(ref) => { this.uploadInput = ref; }} type="file"/>
-                        <br/>
-                        <Box mt={3}>
-                        <Button variant='contained' style={{color: '#fff',backgroundColor: '#fc3a6c'}} onClick={this.handleUpload2}>Upload Aadhar card</Button>
+                        <Button variant='contained' style={{color: '#fff',backgroundColor: '#999'}} onClick={this.handleSubmit}>Upload bank statement of last 6 months</Button>
                         </Box>
                         </Box>
                         </center>
@@ -86,4 +69,4 @@ class OnboardingFinal_Wrapper extends React.PureComponent {
     );
   }
 }
-export default OnboardingFinal_Wrapper;
+export default BankStatementWrapper;

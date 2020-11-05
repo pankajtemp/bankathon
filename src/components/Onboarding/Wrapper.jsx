@@ -37,7 +37,7 @@ class OnboardingFinal_Wrapper extends React.PureComponent {
                 style={{borderBottomLeftRadius: '30px', borderBottomRightRadius: '30px'}}               
                 >
                 <Typography variant='h4' style={{color: '#fff'}}>
-                    PAN verification
+                    PAN authentication
                 </Typography>
             </Box>
             <Box pt={8}>

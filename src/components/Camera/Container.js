@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import Onboarding_Wrapper from './Wrapper'
-import {uploadDoc} from './Action'
 
 class Onboarding_Container extends React.PureComponent{
   constructor(props){
@@ -24,7 +23,7 @@ class Onboarding_Container extends React.PureComponent{
           }
         }
             />
-            :<Link to='/next-page'>Navigate to next page</Link>}
+            :<Link to='/next-final'>Navigate to next page</Link>}
            </> 
         )
     }
@@ -36,9 +35,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   actions: {
-    uploadDoc: data => {
-      return dispatch(uploadDoc(data))
-    }
   }
   })
   
