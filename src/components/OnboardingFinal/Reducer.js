@@ -1,14 +1,7 @@
-// import {
-//     AUTHENTICATE_USER_INIT,
-//     AUTHENTICATE_USER_SUCCESS,
-//     AUTHENTICATE_USER_FAILURE} from './Constants'
 
-// const DEFAULT_STATE = {
-//   loading: false,
-//   token: '',
-//   otherDetails: {},
-//   errors: []
-// }
+const DEFAULT_STATE = {
+  pan:''
+}
 
 // const AuthenticationReducer = (state = DEFAULT_STATE, action) => {
 //   switch (action.type) {
@@ -35,4 +28,18 @@
 //   }
 // }
 
-// export default AuthenticationReducer
+const PANReducer = (state=DEFAULT_STATE, action)=>{
+    switch(action.type){
+        case 'PAN_VERIFICATION_SUCCESS':{
+            return{
+                ...state,
+                pan: action.payload.pan
+            }
+        }
+        default:{
+            return state
+        }
+    }
+}
+
+export default PANReducer

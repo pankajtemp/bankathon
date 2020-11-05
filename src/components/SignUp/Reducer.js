@@ -6,7 +6,7 @@ import {
 const DEFAULT_STATE = {
   loading: false,
   token: '',
-  otherDetails: {},
+  details: {},
   errors: []
 }
 
@@ -20,7 +20,7 @@ const AuthenticationReducer = (state = DEFAULT_STATE, action) => {
           loading: false, 
           errors: [], 
           token: action.payload.token,
-          otherDetails: action.payload.draft
+          details: action.payload.draft
         }
     }
     case AUTHENTICATE_USER_FAILURE: {

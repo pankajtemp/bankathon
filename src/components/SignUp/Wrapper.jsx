@@ -33,6 +33,7 @@ class SignUp_Wrapper extends React.PureComponent{
                 bgcolor='#ffd5cd'
                 p={2}
                 pt={8}
+                style={{background: 'linear-gradient(0deg, #ffd5cd 70%, #fef3f3 100%)'}}
             >
                 <Grid
                     container
@@ -95,8 +96,8 @@ class SignUp_Wrapper extends React.PureComponent{
                             type='number' 
                             size='small'
                             value={otp} 
-                            label='Contact number'
-                            placeholder='Enter your mobile number'
+                            label='OTP'
+                            placeholder='Enter the OTP'
                             color='secondary'
                             onChange={(e)=> this.setState({otp: e.target.value})}
                         />

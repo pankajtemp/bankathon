@@ -1,40 +1,40 @@
-// import jsonPlaceholder from '../../apis/jsonPlaceholder';
+import jsonPlaceholder from '../../apis/jsonPlaceholder';
 
-// import {
-//     AUTHENTICATE_USER_INIT,
-//     AUTHENTICATE_USER_SUCCESS,
-//     AUTHENTICATE_USER_FAILURE} from './Constants'
+import {
+    CHECK_CIBIL_INIT,
+    CHECK_CIBIL_SUCCESS,
+    CHECK_CIBIL_FAILURE} from './Constants'
 
-// const initAuthentication = (payload) => ({
-//     type: AUTHENTICATE_USER_INIT,
-//     payload
-//   })
-// const initAuthenticationSuccess = (payload) => ({
-//     type: AUTHENTICATE_USER_SUCCESS,
-//     payload
-//   })
-// const initAuthenticationFailure = (payload) => ({
-//     type: AUTHENTICATE_USER_FAILURE,
-//     payload
-//   })
+const initCheckCibil = (payload) => ({
+    type: CHECK_CIBIL_INIT,
+    payload
+  })
+const initCheckCibilSuccess = (payload) => ({
+    type: CHECK_CIBIL_SUCCESS,
+    payload
+  })
+const initCheckCibilFailure = (payload) => ({
+    type: CHECK_CIBIL_FAILURE,
+    payload
+  })
 
 
-// const authenticate = (data) => {
-//     return async (dispatch, getState) => {
-//       dispatch(initAuthentication(data))
-//       try {
-//         const response = await jsonPlaceholder.post('/auth/login', data);
-//         const responseData = response.data
-//         dispatch(initAuthenticationSuccess(responseData))
-//         console.log('Validated SIGNUP',responseData)
-//         return responseData
-//       } catch (error) {
-//         console.log(error)
-//         dispatch(initAuthenticationFailure(error))
-//         console.log('ERROR while signing up', error)
-//         throw error
-//       }
-//     }
-//   }
+const uploadDoc = (data) => {
+    return async (dispatch, getState) => {
+      dispatch(initCheckCibil(data))
+      try {
+        const response = await jsonPlaceholder.post('/loan/eligibility', data);
+        const responseData = response.data
+        dispatch(initCheckCibilSuccess(responseData))
+        console.log('Validated CIBIL',responseData)
+        return responseData
+      } catch (error) {
+        console.log(error)
+        dispatch(initCheckCibilFailure(error))
+        console.log('ERROR while CIBIL check', error)
+        throw error
+      }
+    }
+  }
 
-// export {authenticate} 
+export {uploadDoc} 

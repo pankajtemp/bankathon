@@ -1,28 +1,45 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import {Link} from 'react-router-dom'
 
 import Onboarding_Wrapper from './Wrapper'
-// import {} from './Action'
+import {uploadDoc} from './Action'
 
 class Onboarding_Container extends React.PureComponent{
+  constructor(props){
+    super(props)
+    this.state={flag: false}
+  }
     render(){
-        const {actions, pan} = this.props
+        const {actions} = this.props
+        const {flag}=this.state
         return(
+          <>
+          {!flag?
             <Onboarding_Wrapper
-              pan={pan}
+            // pan={pan}
+            uploadDoc = {()=>
+              {console.log('dummy upload')
+            setTimeout(this.setState({flag: true}), 3000)
+          }
+        }
             />
+            :<Link to='/gst-aadhar'>Navigate to next page</Link>}
+           </> 
         )
     }
 }
 
 const mapStateToProps = state => ({
-    userLoginData: state.SignUpData,
-    pan: state.PanVerificationData.pan
+    // pan: state.PanVerificationData.pan
   })
 
 const mapDispatchToProps = dispatch => ({
-    actions: {
+  actions: {
+    uploadDoc: data => {
+      return dispatch(uploadDoc(data))
     }
+  }
   })
   
 export default   connect(mapStateToProps, mapDispatchToProps)(Onboarding_Container)
