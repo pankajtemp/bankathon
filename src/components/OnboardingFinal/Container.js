@@ -24,7 +24,7 @@ class Onboarding_Container extends React.PureComponent{
           }
         }
             />
-            :<Link to='/gst-aadhar'>Navigate to next page</Link>}
+            :<Link to='/next-page'>Navigate to next page</Link>}
            </> 
         )
     }
