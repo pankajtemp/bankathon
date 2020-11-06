@@ -70,11 +70,15 @@ class OnboardingFinal_Wrapper extends React.PureComponent {
                           <Box px={3} py={2}>
                           {/* <p>&nbsp;</p> */}
                           <input type='checkbox'/>
-                          <label>I agree to the terms and conditions</label>
+                          <label>I agree to the &nbsp;
+                          <a 
+                          href='https://arogyafinance.com/assets/documents/Arogya-Finance-Terms-Revised.pdf' target='_blank'>
+                            terms and conditions
+                            </a></label>
                           {/* <p>&nbsp;</p> */}
                           </Box>
                           <Button onClick={this.handleSubmit} variant='contained'  style={{color: '#fff',backgroundColor: '#fc3a6c'}}>
-                            PAN for CIBIL check
+                            Apply for loan
                           </Button>
                         </Box>
                         </Box>
