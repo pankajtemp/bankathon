@@ -56,8 +56,9 @@ class CameraWrapper extends React.PureComponent {
                         />
                         </center>
                         <Box pt={2}>
-                            <Typography variant='h6'>Click a picture of yourself</Typography>
-                        </Box>
+                        <Typography variant='h6'>Click a picture of yourself</Typography>
+                        <Typography variant='caption'>* By clicking a picture of yourself, you also give us consent to analyze 
+                        your photo and make a conclusion if you are indeed a human (not a robot) and a loan can be made available for you.</Typography>                        </Box>
                     </Box>
                      </Grid>
                  </Grid>

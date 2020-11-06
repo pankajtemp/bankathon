@@ -34,7 +34,7 @@ class OnboardingFinal_Wrapper extends React.PureComponent {
                 <Box
                 bgcolor='#fc3a6c'
                 p={3} 
-                py={6}
+                py={5}
                 style={{borderBottomLeftRadius: '30px', borderBottomRightRadius: '30px'}}               
                 >
                 <Typography variant='h4' style={{color: '#fff'}}>
@@ -73,8 +73,13 @@ class OnboardingFinal_Wrapper extends React.PureComponent {
                         <input onChange={this.handleChange} ref={(ref) => { this.uploadInput = ref; }} type="file"/>
                         <br/>
                         <Box mt={3}>
-                        <Button variant='contained' style={{color: '#fff',backgroundColor: '#fc3a6c'}} onClick={this.handleUpload2}>Upload Aadhar card</Button>
+                        <Button variant='contained' style={{color: '#fff',backgroundColor: '#fc3a6c'}} onClick={this.handleUpload2}>Upload GSTIN card *</Button>
+                        <Typography variant='caption'>
+                          *Aadhar in case of an individual PAN
+                          </Typography>                       
+                    
                         </Box>
+                        
                         </Box>
                         </center>
                     </Box>

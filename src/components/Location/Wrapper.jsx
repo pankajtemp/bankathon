@@ -38,8 +38,8 @@ class LocationWrapper extends React.PureComponent {
             >
                 <Grid
                     container
-                    justifyContent='center'
-                justifyItems='center'
+                //     justifyContent='center'
+                // justifyItems='center'
                 alignContent='center'
                 alignItems='center'
                 >
